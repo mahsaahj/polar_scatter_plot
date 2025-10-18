@@ -1,0 +1,19 @@
+clc;
+clear;
+close all;
+file_path ='C:\Users\HojatJalali\Desktop\New folder (7)\polar plot.xlsx';
+data_1 = xlsread(file_path);
+% th =  0:0.01:2*pi;
+% r = sin(2*th).*cos(2*th);
+ th =  data_1(:,1);
+ r =  data_1(:,2);
+
+c = data_1(:,3);
+polarscatter(th,r,[],c,'filled','MarkerFaceAlpha',.95)
+rlim([0.89 1])
+thetalim([90 180])
+colorbar
+%  colormap(flipud(gray(256)));
+ colormap jet
+thetaticks([0 30 60 90 120 150 180 210 240 270 300 330])
+thetaticklabels({'jan','feb','march','april','may','jun','july','august','sep','october','nov','december'})
